@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="MyFirstApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Hola Http con AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		<script src="controller.js"></script>
+	</head>
+	<body ng-controller="FirstController">
+		<input type="text" ng-model="newPost.title"><br>
+		<textarea cols="30" rows="10" ng-model="newPost.body"></textarea>
+		<button ng-click="addPost()">Agregar post</button>
+		<ul>
+			<li ng-repeat="post in posts">
+				<h2>{{post.title}}</h2>
+				<p>{{post.body}}</p>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="ToDoList">
+	<head>
+		<meta charset="utf-8">
+		<title>Hola To Do List con AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		<script src="angular-local-storage.min.js"></script>
+		<script src="controller.js"></script>
+	</head>
+	<body ng-controller="ToDoController">
+		<form ng-submit="addAct()">
+			<input type="text" ng-model="newAct.descripcion"><br>
+			<input type="text" ng-model="newAct.fecha">
+			<input type="submit" value="Guardar actividad">
+		</form>
+		<button ng-click="clean()">Limpiar</button>
+		<ul>
+			<li ng-repeat="actividad in todo">
+				<h2>{{actividad.descripcion}}</h2>
+				<!-- Se aplico un filtro para la fecha, para que la muestre en formato corto-->
+				<p>{{actividad.fecha | date: 'sort'}}</p>
+			</li>
+		</ul>
+	</body>
+</html>

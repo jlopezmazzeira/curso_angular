@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="CustomDirective">
+	<head>
+		<meta charset="utf-8">
+		<title>Hola ng-src con AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body ng-controller="AppCtrl">
+		<ul class="no-list" ng-cloak>
+			<li ng-repeat="repo in repos">
+				<img ng-src="{{repo.owner.avatar_url}}" alt="">
+				{{repo.name}}
+			</li>
+		</ul>
+	</body>
+</html>

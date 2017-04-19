@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ToDoList">
+	<head>
+		<meta charset="utf-8">
+		<title>Hola Factories con AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		<script src="angular-local-storage.min.js"></script>
+		<script src="controller.js"></script>
+	</head>
+	<body ng-controller="ToDoController">
+		<form ng-submit="addAct()">
+			<input type="text" ng-model="newAct.descripcion"><br>
+			<input type="text" ng-model="newAct.fecha">
+			<input type="submit" value="Guardar actividad">
+		</form>
+		<button ng-click="clean()">Limpiar</button>
+		<ul>
+			<li ng-repeat="actividad in todo">
+				{{actividad.descripcion}} - {{actividad.fecha | date: 'sort'}} - <a href="#" ng-click="removeActv(actividad)" style="color:red">X</a>
+			</li>
+		</ul>
+	</body>
+</html>
